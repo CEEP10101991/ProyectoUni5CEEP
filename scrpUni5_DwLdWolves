@@ -1,0 +1,13 @@
+#!bin/bash/
+#This script
+#!bin/bash/
+#This script
+#1) Generates an directory named "data"
+#2) Downlads the wolves data on vcf format, and saves them at the previously builded directory
+#
+mkdir ../data
+#1.1---Cambia al directorio data para escribir el archivo
+cd ../data
+#2)
+wget https://datadryad.org/stash/downloads/file_stream/6226 > lobo.vcf
+#take on consideration that this script will build the directory one directory river up from it´s actual location
