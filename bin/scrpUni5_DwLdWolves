@@ -1,7 +1,5 @@
 #!bin/bash/
 #This script
-#!bin/bash/
-#This script
 #1) Generates an directory named "data"
 #2) Downlads the wolves data on vcf format, and saves them at the previously builded directory
 #1)
