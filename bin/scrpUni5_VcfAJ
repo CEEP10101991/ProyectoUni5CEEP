@@ -1,0 +1,54 @@
+#!bin/bash
+
+#César Emiliano Escalona Prado
+##################################################################
+#For the execution of specific commands using vcftools, this exercise was elaborated at "home/cirio/CEEP/lobos/data", at the CONABIO server "cirio"
+#The exercises were performed using vfc tools from docker image "biocontainers/vcftools:0.1.15"
+#Defining doker image
+vcftools="docker run -u 1600 --rm -v /home/cirio/CEEP/lobos/data:/data biocontainers/vcftools:0.1.15 vcftools"
+
+
+#a) Defining the input file at vcftools permits to know the number of individuals and SNPs
+
+$vcftools --vcf wolves.vcf
+
+#b). To calculate allele frequencies from each individual
+
+$vcftools --vcf wolves.vcf --freq --out wolvesFreq
+
+#c). To identify sites with at least have 1 missing data
+
+$vcftools --vcf wolves.vcf --max-missing 1
+
+#d). To calculate frequencies for all individuals without missing data
+
+$vcftools --vcf wolves.vcf --freq --max-missing 1 --out without_missing_data
+
+#e). To identify the number of sites with frequencies under 0.05
+
+$vcftools --vcf wolves.vcf --max-maf 0.05
+
+
+#f). Heterozygosity calculation
+
+$vcftools --vcf wolves.vcf --het --out heterozygosity
+
+#g). To calculate nucleotide diversity per site
+
+$vcftools --vcf wolves.vcf --site-pi --out diversity
+
+#h). To calculate the nucleotide diversity by sites,for one chromosome (slpecificly chromosome 3)
+
+$vcftools --vcf wolves.vcf --chr chr03 --site-pi --out diversity_3
+
+#i). Generate a file that filtered sites with frequencies under 0.05
+
+$vcftools --vcf wolves.vcf --max-maf 0.05 --recode --out wolves_maf0.5
+
+#j) Parameter "--plink" export an vcf file to plink format files, in this partuicular script, the new files are named as "plinkWolves"
+#j.1)rename file to avoid points or problematic symbols
+
+$mv wolves_maf0.5.recode.vcf wolves_maf.vcf
+#j.2). Export
+
+$vcftools --vcf wolves_maf.vcf --plink --out plinkWolves
