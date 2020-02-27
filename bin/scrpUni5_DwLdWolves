@@ -4,10 +4,15 @@
 #This script
 #1) Generates an directory named "data"
 #2) Downlads the wolves data on vcf format, and saves them at the previously builded directory
-#
+#1)
 mkdir ../data
-#1.1---Cambia al directorio data para escribir el archivo
+#1.1)move to the new ditectory
 cd ../data
 #2)
-wget https://datadryad.org/stash/downloads/file_stream/6226 > lobo.vcf
+wget https://datadryad.org/stash/downloads/file_stream/6226 #download
+
+mv 6226 wolve.vcf #rename the file
+
+#return to bin directory
+cd ../bin
 #take on consideration that this script will build the directory one directory river up from it´s actual location
