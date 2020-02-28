@@ -23,4 +23,4 @@ For the execution of this tasks, this repository present scripts located at <spa
 
 `RscrpUni5_PcaPlots.R`Performs the task <span style="color:purple">C</span> and <span style="color:orange">D</span>
 
-To facilitate the map construction the repository includes the file `AllSamples_n117_wLatLong.csv` previously converted as a `.csv` file, that file is located at  <span style="color:darkblue">data</span> directory
+To facilitate the map construction the repository includes the file `AllSamples_n117_wLatLong.csv` previously converted as a `.csv` file, that file is located at  <span style="color:darkblue">data</span> directory 
