@@ -9,7 +9,7 @@ cd ../data
 #2)
 wget https://datadryad.org/stash/downloads/file_stream/6226 #download
 
-mv 6226 wolve.vcf #rename the file
+mv 6226 wolves.vcf #rename the file
 
 #return to bin directory
 cd ../bin
