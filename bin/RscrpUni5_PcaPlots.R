@@ -14,13 +14,7 @@ snpgdsBED2GDS("../data/plinkWolves.bed",
 # Creat an object that reads the previously generated gds file
 genofile <- snpgdsOpen("../data/plinkWolves.gds")
 
-# Check snp.ids
-head(read.gdsn(index.gdsn(genofile, "snp.id")))
-
-# Check sample.ids
-head(read.gdsn(index.gdsn(genofile, "sample.id")))
-
-# obtain a lis of the gdsn samples
+# obtain a list of the gdsn samples
 sample.id <- read.gdsn(index.gdsn(genofile, "sample.id"))
 sample.id
 
