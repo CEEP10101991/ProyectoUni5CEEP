@@ -22,7 +22,7 @@ $vcftools --vcf wolves.vcf --max-missing 1
 
 #d). To calculate frequencies for all individuals without missing data
 
-$vcftools --vcf wolves.vcf --freq --max-missing 1 --out withoutMissingData
+$vcftools --vcf wolves.vcf --freq --max-missing 1 --out without_missing_data
 
 #e). To identify the number of sites with frequencies under 0.05
 
@@ -39,7 +39,7 @@ $vcftools --vcf wolves.vcf --site-pi --out diversity
 
 #h). To calculate the nucleotide diversity by sites,for one chromosome (slpecificly chromosome 3)
 
-$vcftools --vcf wolves.vcf --chr chr03 --site-pi --out diversity3
+$vcftools --vcf wolves.vcf --chr chr03 --site-pi --out diversity_3
 
 #i). Generate a file that filtered sites with frequencies under 0.05
 
@@ -48,7 +48,7 @@ $vcftools --vcf wolves.vcf --max-maf 0.05 --recode --out wolves_maf0.5
 #j) Parameter "--plink" export an vcf file to plink format files, in this partuicular script, the new files are named as "plinkWolves"
 #j.1)rename file to avoid points or problematic symbols
 
-$mv wolves_maf0.5.recode.vcf wolves_maf.vcf
+mv ../data/wolves_maf0.5.recode.vcf ../data/wolves_maf.vcf
 #j.2). Export
 
 $vcftools --vcf wolves_maf.vcf --plink --out plinkWolves
