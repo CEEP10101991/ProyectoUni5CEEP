@@ -1,0 +1,3 @@
+#!bin/bash/
+#To download the directory from cluster
+scp  -r -p45789cirio@200.12.166.164:/home/cirio/CEEP/lobos/data/ ./
