@@ -52,3 +52,17 @@ ggplot(data = tab, aes(x=EV2, y=EV1)) + geom_point() +
   ylab(paste0("eigenvector 1 explaining ", round(pc.percent, 2)[1], "%")) +
   xlab(paste0("eigenvector 2 explaining ", round(pc.percent, 2)[2], "%"))
 
+####Creating a Map, that allows at first instance to visualice the ubication of the samples and the Ecotype or Status for each One  
+
+#Package requiered
+library(maptools)
+#maptools contain some basic maps that aer usefull for first visualizations
+data(wrld_simpl)
+plot(wrld_simpl)
+
+#Lobos is an object obtained from the meta data of wolves, that contains the georeferenciation of the samples
+lobos<-read.csv("../data/AllSamples_n117_wLatLong.csv",header=TRUE,sep=",")
+puntos<-SpatialPoints(lobos[, c("Longitude","Latitude")])#To create an object that contains spatial points from the Longitude an Latitude columns at "lobos"
+#to generate the map
+plot(puntos, pch=17, col=lobos$Ecotype.or.Status,add=TRUE)
+legend("right","botom",unique(lobos$Ecotype.or.Status),col=1:length(lobos$Ecotype.or.Status),pch=1,cex = 0.4) #the legend performed shows the  Ecotype or Status of each ploted sample
