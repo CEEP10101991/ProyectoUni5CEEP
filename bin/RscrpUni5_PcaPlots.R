@@ -11,9 +11,6 @@ snpgdsBED2GDS("../data/plinkWolves.bed",
               "../data/plinkWolves.fam", 
               "../data/plinkWolves.bim", 
               out.gdsfn="../data/plinkWolves.gds")
-# File Summary
-snpgdsSummary("../data/maicesArtegaetal2015.gds")
-
 # Creat an object that reads the previously generated gds file
 genofile <- snpgdsOpen("../data/plinkWolves.gds")
 
