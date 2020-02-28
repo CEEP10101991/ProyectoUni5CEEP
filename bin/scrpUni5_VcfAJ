@@ -52,3 +52,8 @@ $mv wolves_maf0.5.recode.vcf wolves_maf.vcf
 #j.2). Export
 
 $vcftools --vcf wolves_maf.vcf --plink --out plinkWolves
+
+#########To Generate bin,bed,fam files
+cd ~ #go to home
+#export to other plink formats, Parameter --chr-set 38 permits to read the files as wolves
+./plink --file CEEP/lobos/data/plinkWolves --make-bed --chr-set 38 --out CEEP/lobos/data/plinkWolves
