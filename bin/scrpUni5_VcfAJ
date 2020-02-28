@@ -43,15 +43,15 @@ $vcftools --vcf wolves.vcf --chr chr03 --site-pi --out diversity3
 
 #i). Generate a file that filtered sites with frequencies under 0.05
 
-$vcftools --vcf wolves.vcf --max-maf 0.05 --recode --out wolvesMaf0.5
+$vcftools --vcf wolves.vcf --max-maf 0.05 --recode --out wolves_maf0.5
 
 #j) Parameter "--plink" export an vcf file to plink format files, in this partuicular script, the new files are named as "plinkWolves"
 #j.1)rename file to avoid points or problematic symbols
 
-$mv wolvesMaf0.5.recode.vcf wolvesMaf.vcf
+$mv wolves_maf0.5.recode.vcf wolves_maf.vcf
 #j.2). Export
 
-$vcftools --vcf wolvesMaf.vcf --plink --out plinkWolves
+$vcftools --vcf wolves_maf.vcf --plink --out plinkWolves
 
 #########To Generate bin,bed,fam files
 cd ~ #go to home
